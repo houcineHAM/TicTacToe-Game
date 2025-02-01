@@ -1,51 +1,89 @@
-# TicTacToe-Game
+Thanks for the clarification! Here's the updated README with a more precise explanation of why the compilation order matters:  
 
-A multiplayer Tic-Tac-Toe game built with Java. It uses server-client communication (Java Sockets) to allow two players to play over a network. The game includes a simple Swing GUI, real-time move synchronization, and handles player disconnections. Improved and updated after a year.
+---
 
-## How to Run the Game
+# Tic-Tac-Toe Multiplayer Game  
 
-### Requirements:
-- Java 8 or above
-- A terminal or command prompt
+A network-based multiplayer Tic-Tac-Toe game built with Java. It uses **server-client communication (Java Sockets)** to allow two players to play over a network. The game features a **Swing-based GUI**, real-time move synchronization, and handles player disconnections.  
 
-### Steps to Play:
+## Features  
 
-1. **Run the Server**:
-   - Open a terminal and navigate to the project folder.
-   - Compile the server code:
-     ```bash
-     javac TicTacToeServer.java
-     ```
-   - Run the server:
-     ```bash
-     java TicTacToeServer
-     ```
+✅ **Real-time synchronization** – Moves made by one player instantly appear on the other player's screen.  
+✅ **Graphical User Interface (GUI)** – A simple and intuitive Swing-based interface.  
+✅ **Server-Client Communication** – Uses Java sockets to enable multiplayer gameplay over a network.  
+✅ **Player Disconnection Handling** – If a player disconnects, the game will manage it gracefully.  
 
-2. **Run the Clients**:
-   - Open two separate terminals (for each player).
-   - In each terminal, navigate to the project folder.
-   - Compile the client code:
-     ```bash
-     javac TicTacToeGame.java
-     ```
-   - Run each client (in different terminals):
-     ```bash
-     java TicTacToeGame
-     ```
+---
 
-3. **Start Playing**:
-   - Both players will see the game interface in their terminals.
-   - Player 1 and Player 2 will take turns making moves on the Tic-Tac-Toe grid.
-   - The game will show the result (win/lose/draw) in real time.
+## How to Run the Game  
 
-### Features:
-- **Real-time synchronization**: Moves made by one player are immediately visible to the other player.
-- **Swing GUI**: A simple graphical user interface for the game.
-- **Server-client communication**: Players connect to a common server to play together.
-- **Player disconnection handling**: The game handles scenarios where a player disconnects.
+### Requirements  
 
-### Contributing:
-Feel free to fork the repository, submit pull requests, or open issues for bugs or feature requests.
+- **Java 8 or later**  
+- **Terminal or Command Prompt**  
 
-### License:
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### Steps to Play  
+
+#### 1️⃣ **Compile the Game Files in the Correct Order**  
+
+⚠️ **Important:** You must compile the game files before the server because **TicTacToeServer.java depends on a class from TicTacToeGame.java**. If you compile the server first.
+
+To avoid this, compile in the following order:  
+
+1. Compile the game files first:  
+
+   ```bash
+   javac TicTacToeMove.java TicTacToeGame.java
+   ```
+
+2. Then compile the server:  
+
+   ```bash
+   javac TicTacToeServer.java
+   ```
+
+#### 2️⃣ **Start the Server**  
+
+Run the server to allow players to connect:  
+
+```bash
+java TicTacToeServer
+```
+
+#### 3️⃣ **Start the Clients**  
+
+Each player should open a separate terminal, navigate to the project folder, and run the client:  
+
+```bash
+java TicTacToeGame
+```
+
+#### 4️⃣ **Play the Game!**  
+
+- The Tic-Tac-Toe board will appear in the GUI.  
+- Players take turns making moves.  
+- The game announces the winner or declares a draw in real-time.  
+
+---
+
+## Troubleshooting  
+
+- **Game not starting?** Ensure that both the server and clients are running in separate terminals.  
+- **Compilation errors?** Make sure you compile `TicTacToeMove.java` and `TicTacToeGame.java` first before the server.  
+- **Connection issues?** Check if the correct IP and port are being used in the code.  
+- **GUI not appearing?** Make sure you are running the game on a system with a graphical interface.  
+
+---
+
+## Contributing  
+
+Want to improve the game? Feel free to:  
+- Fork the repository  
+- Submit pull requests  
+- Report issues or suggest new features  
+
+---
+
+## License  
+
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.  

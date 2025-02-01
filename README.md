@@ -1,6 +1,3 @@
-Thanks for the clarification! Here's the updated README with a more precise explanation of why the compilation order matters:  
-
----
 
 # Tic-Tac-Toe Multiplayer Game  
 

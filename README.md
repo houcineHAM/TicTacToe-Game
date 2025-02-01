@@ -67,8 +67,6 @@ java TicTacToeGame
 
 - **Game not starting?** Ensure that both the server and clients are running in separate terminals.  
 - **Compilation errors?** Make sure you compile `TicTacToeMove.java` and `TicTacToeGame.java` first before the server.  
-- **Connection issues?** Check if the correct IP and port are being used in the code.  
-- **GUI not appearing?** Make sure you are running the game on a system with a graphical interface.  
 
 ---
 
